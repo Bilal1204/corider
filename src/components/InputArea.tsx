@@ -16,9 +16,9 @@ const InputArea = () => {
           <Paperclip size={24} />
         </Button>
           </PopoverTrigger>
-          <PopoverContent className='width-auto'>
-            <PopoverArrow />
-            <PopoverBody background={'#008000'} className='flex flex-row justify-center border-0 rounded-full w-auto'>
+          <PopoverContent bgColor={'transparent'} className='rounded-full' width="auto" >
+            <PopoverArrow bgColor={'#008000'}/>
+            <PopoverBody className='bg-[#008000] flex flex-row justify-center border-0 rounded-full w-auto'>
               <Camera color='white' className='m-2' size={24} />
               <Video color='white' className='m-2' size={24} />
               <FileDown color='white' className='m-2' size={24} />

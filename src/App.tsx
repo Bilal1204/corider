@@ -61,21 +61,17 @@ function App() {
   return (
     <ChakraProvider>
         {loading ? (
-          <Spinner
-          thickness='4px'
-          speed='0.65s'
-          emptyColor='gray.200'
-          color='blue.500'
-          size='xl'
-        />
+          null
         ) : (
-          <div className='w-full min-h-screen relative pb-16'>
-            <Navbar name={data.name} image={image} from={data.from} to={data.to}/>
-            <Chats chats={data.chats}/>
-            <div className="w-full fixed bottom-0 ">
-              <InputArea />
+           <div className='flex flex-col h-screen w-full relative'>
+                <Navbar name={data.name} image={image} from={data.from} to={data.to}/>
+                <div className='overflow-y-auto flex-grow'>
+                  <Chats chats={data.chats}/>
+                </div>
+                <div className="w-full fixed bottom-0">
+                  <InputArea />
+                </div>
             </div>
-          </div>
         )}
     </ChakraProvider>
   )

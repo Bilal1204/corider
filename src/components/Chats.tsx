@@ -1,3 +1,4 @@
+import { useCallback, useRef } from "react"
 import { Chat } from "../App"
 import { Image } from '@chakra-ui/react'
 
@@ -8,8 +9,14 @@ type ChatProps = {
 const Chats = ({chats} : ChatProps ) => {
     let prevDate = ''
 
+    const scrollRef = useCallback((node : HTMLElement | null) => {
+        if (node !== null) {
+            node.scrollIntoView();
+        }
+    }, []);
+
     return (
-        <div>
+        <div className="pb-5 mb-10">
             {chats.map((chat: Chat, index: number) => {
                 const date = new Date(chat.time);
 
@@ -30,7 +37,7 @@ const Chats = ({chats} : ChatProps ) => {
                 }
 
                 return (
-                    <div className="pb-2">
+                    <div key={index} ref={index === chats.length-1 ? scrollRef : null} className="pb-2">
                     {dateToDisplay}
                         {chat.sender.self ? 
                 <div className="grid grid-cols-12">
@@ -42,18 +49,20 @@ const Chats = ({chats} : ChatProps ) => {
                     </div> 
                 </div>
                         : 
-                        <div className="flex flex-row m-3">
-                            <Image className="" borderRadius='full' boxSize='50px' src={chat.sender.image} alt='Dan Abramov' />
                         <div className="grid grid-cols-12">
+                        <div className="col-span-1">
+                            <div className="relative inline-block">
+                            <Image className="" borderRadius='full' boxSize='30px' src={chat.sender.image} alt='Dan Abramov' />
+                            <Image className="bottom-0 right-0 absolute" boxSize='15px' src='/icons/check.png' alt='Verified' />
+                            </div>
+                        </div>
                             <div className="col-span-10 border rounded-b-xl rounded-r-xl m-1 bg-gray-200">
                                     <div className="p-1">
                                         <h1 className="text-gray-700 ">{chat.message}</h1>
                                     </div>
                             </div>
                         </div>
-                    </div>
                         }
-                        
                     </div>
                 );
             })}

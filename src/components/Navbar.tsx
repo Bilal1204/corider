@@ -10,8 +10,8 @@ interface NavbarProps {
 
 const Navbar = ({name, image, from, to} : NavbarProps) => {
   return (
-    <div className='border-b-2'>
-    <div className="grid grid-cols-12 pt-10 pl-5 pr-2">
+    <div className='bg-white border-b-2'>
+    <div className="grid grid-cols-12 pt-5 pl-5 pr-2">
         <div className='col-span-10'>
             <div className="flex">
                 <ArrowLeft className='m-2' size={28} />
