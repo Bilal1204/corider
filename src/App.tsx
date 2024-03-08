@@ -1,4 +1,4 @@
-import { ChakraProvider, Spinner } from '@chakra-ui/react'
+import { ChakraProvider} from '@chakra-ui/react'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import Navbar from './components/Navbar'

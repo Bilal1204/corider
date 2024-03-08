@@ -1,4 +1,4 @@
-import { useCallback, useRef } from "react"
+import { useCallback} from "react"
 import { Chat } from "../App"
 import { Image } from '@chakra-ui/react'
 
