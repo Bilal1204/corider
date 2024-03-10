@@ -10,12 +10,12 @@ interface NavbarProps {
 
 const Navbar = ({name, image, from, to} : NavbarProps) => {
   return (
-    <div className='bg-white border-b-2'>
-    <div className="grid grid-cols-12 pt-5 pl-5 pr-2">
+    <div className='border-b'>
+    <div className="grid grid-cols-12 pt-5 pl-2 pr-2">
         <div className='col-span-10'>
             <div className="flex">
                 <ArrowLeft className='m-2' size={28} />
-                <h1 className='m-1 font-semibold text-2xl'>{name}</h1>
+                <h1 className='m-1 font-semibold text-2xl'>{name.replace("No.", "")}</h1>
             </div>
         </div>
         <div className="flex flex-row-reverse col-span-2">
@@ -23,12 +23,12 @@ const Navbar = ({name, image, from, to} : NavbarProps) => {
         </div>
     </div>
 
-    <div className="grid grid-cols-12 pt-2 pl-5 pr-2">
+    <div className="grid grid-cols-12 pl-2 pr-2">
         <div className='col-span-10 flex flex-row'>
-            <Image className='m-2' borderRadius='full' boxSize='50px' src={image} alt='Dan Abramov'/>
+            <Image className='m-2 mt-3' borderRadius='full' boxSize='50px' src={image} alt='Dan Abramov'/>
             <div className='flex flex-col m-2'>
-                 <h1 className='text-md'>From <span className='font-semibold text-xl'>{from}</span></h1>
-                 <h1 className='text-md'>To <span className='font-semibold text-xl'>{to}</span></h1>
+                 <h1 className='text-md font-[500] text-[#606060]'>From <span className='font-semibold text-xl text-[#141E0D]'>{from}</span></h1>
+                 <h1 className='text-md font-[500] text-[#606060]'>To <span className='font-semibold text-xl text-[#141E0D]'>{to}</span></h1>
             </div>
         </div>
         <div className="flex flex-row-reverse col-span-2">

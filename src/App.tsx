@@ -63,7 +63,7 @@ function App() {
         {loading ? (
           null
         ) : (
-           <div className='flex flex-col h-screen w-full relative'>
+           <div className='flex flex-col h-screen w-full relative bg-[#FAF9F4]'>
                 <Navbar name={data.name} image={image} from={data.from} to={data.to}/>
                 <div className='overflow-y-auto flex-grow'>
                   <Chats chats={data.chats}/>
